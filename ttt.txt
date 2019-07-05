@@ -1,3 +1,17 @@
-NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNnnnn
-NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNnn
-NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNnnnn
+#include<stdio.h>
+#include<stdint.h>
+
+int main()
+{
+uint8_t data=1;
+uint8_t *ptr=&data;
+if(*ptr)
+{
+printf("litile endian\n ");
+}
+else
+{
+printf(" bigendian\n ");
+}
+
+}
