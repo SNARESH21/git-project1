@@ -1,3 +1,5 @@
+/*find endian*/
+
 #include<stdio.h>
 #include<stdint.h>
 
@@ -13,5 +15,40 @@ else
 {
 printf(" bigendian\n ");
 }
+
+}
+
+/*C function for decimal to BCD convertion */
+#include<stdio.h>
+#include<stdint.h>
+
+uint8_t decimal_toBCD(uint8_t decimal)
+{
+
+return ((decimal/10)<<4|(decimal%10)));  /* eg:decimal=25
+                                               decimal/10=2 or 0x0000 0010
+
+                                              (decimal/10)<<4=0x0010 0000
+                                                   decimal%10=5 or 0x0000 0101 
+                              ((decimal/10)<<4|(decimal%10)))= 0x0010 0000 + 0x0000 0101=0x0010 0101
+                                                
+                                              */    
+
+}
+
+
+/*C function for decimal to BCD to decimal  convertion */
+#include<stdio.h>
+#include<stdint.h>
+
+uint8_t decimal_toBCD(uint8_t BCD)
+{
+return ((BCD>>4)*10|(BCD&0xF));   /* eg: BCD = 0x0010 0101
+                                         (BCD>>4)*10  = (0x0000 0010)*10=20
+                                          BCD&0xF = (0x0010 0101)&0xF=5
+                                       ((BCD>>4)*10|(BCD&0xF))=20+5=25
+                                                
+                                              */    
+
 
 }
